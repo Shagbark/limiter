@@ -9,6 +9,10 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
+    <properties>
+        <jdk.version>1.8</jdk.version>
+    </properties>
+
     <dependencies>
 
         <dependency>
@@ -17,22 +21,28 @@
             <version>19.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
+
             <plugin>
-
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
                 <configuration>
-                    <archive>
-                        <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-                    </archive>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
                 </configuration>
-
             </plugin>
+
         </plugins>
     </build>
 
